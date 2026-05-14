@@ -887,6 +887,12 @@
               <label for="sigAgree">I am an authorized representative of the Town of Castle Rock and agree to the terms of this proposal. I acknowledge that my typed name serves as a legally binding digital signature, subject to final legal review.</label>
             </div>
 
+            <!-- Honeypot: hidden from real users, bots fill it in -->
+            <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+              <label for="sigHoney">Leave this field empty</label>
+              <input type="text" id="sigHoney" name="_honey" tabindex="-1" autocomplete="off">
+            </div>
+
             <div style="text-align: center;">
               <button class="btn-primary" id="signBtn" onclick="signProposal()" disabled>
                 Sign Proposal
@@ -1051,11 +1057,16 @@
     emailInput.addEventListener('input', validateForm);
     agreeCheck.addEventListener('change', validateForm);
 
+    // ── Page load timestamp for anti-spam ──
+    const pageLoadedAt = Date.now();
+
     // ── Sign proposal ──
     async function signProposal() {
       const name = nameInput.value.trim();
       const title = titleInput.value.trim();
       const email = emailInput.value.trim();
+      const honeyInput = document.getElementById('sigHoney');
+      const honey = honeyInput ? honeyInput.value : '';
       const now = new Date();
       const dateStr = now.toLocaleString('en-US', {
         weekday: 'long',
@@ -1070,26 +1081,34 @@
       signBtn.disabled = true;
       signBtn.textContent = 'Signing...';
 
-      // Send to FormSubmit (sends email to sean.pooley@nanopulse.digital)
+      let success = false;
       try {
-        const formData = new FormData();
-        formData.append('Signed By', name);
-        formData.append('Title', title);
-        formData.append('Signer Email', email);
-        formData.append('Date Signed', dateStr);
-        formData.append('Proposal', 'NPD-2026-CRTA');
-        formData.append('Client', 'Town of Castle Rock');
-        formData.append('_subject', 'Proposal Signed: Town of Castle Rock (NPD-2026-CRTA)');
-        formData.append('_template', 'table');
-        formData.append('_captcha', 'false');
-
-        await fetch('https://formsubmit.co/ajax/sean.pooley@nanopulse.digital', {
+        const res = await fetch('https://npd-forms.vercel.app/api/contact', {
           method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: formData
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            site: 'castle-rock-proposal',
+            name: name,
+            email: email,
+            title: title,
+            client: 'Town of Castle Rock',
+            proposalId: 'NPD-2026-CRTA',
+            agreedAt: dateStr,
+            formType: 'Proposal Signature',
+            _loaded: pageLoadedAt,
+            _honey: honey
+          })
         });
+        success = res.ok;
       } catch (err) {
-        console.error('Notification failed:', err);
+        console.error('Submission failed:', err);
+      }
+
+      if (!success) {
+        signBtn.disabled = false;
+        signBtn.textContent = 'Try Again';
+        alert('Something went wrong submitting the signature. Please try again, or contact sean.pooley@nanopulse.digital directly.');
+        return;
       }
 
       // Show success
