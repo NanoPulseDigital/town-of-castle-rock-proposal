@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulting Retainer Proposal for the Town of Castle Rock | Nano Pulse Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #140d26;
+      --surface: rgba(32, 23, 54, 0.6);
+      --border: rgba(255,255,255,0.1);
+      --border-strong: rgba(255,255,255,0.15);
+      --text: #b3bdcc;
+      --text-bright: #f8fafc;
+      --pink: #F72585;
+      --blue: #4363ef;
+      --violet: #7309b9;
+      --pink-glow: rgba(247, 37, 133, 0.4);
+      --card-radius: 24px;
+      --section-padding: 80px 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1.625;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: rgba(247, 37, 133, 0.3); }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--pink) 0%, var(--violet) 40%, transparent 70%);
+      opacity: 0.12;
+      filter: blur(100px);
+      pointer-events: none;
+    }
+    .hero-logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: 32px;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--pink);
+      border: 1px solid rgba(247, 37, 133, 0.3);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      color: var(--text-bright);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .hero h1 .gradient {
+      background: linear-gradient(90deg, var(--pink), var(--violet), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero .subtitle {
+      font-size: 20px;
+      color: var(--text);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .hero .meta {
+      margin-top: 32px;
+      font-size: 14px;
+      color: rgba(179, 189, 204, 0.5);
+    }
+    .hero .download-row {
+      margin-top: 40px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: var(--section-padding); }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      color: var(--text-bright);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    h2 .gradient {
+      background: linear-gradient(90deg, var(--pink), var(--violet), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 8px;
+    }
+    .section-intro {
+      font-size: 18px;
+      color: var(--text);
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 32px;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      transition: transform 0.3s ease;
+    }
+    .card:hover { transform: translateY(-2px); }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 22px;
+    }
+
+    /* ── PRICING TABLE ── */
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--card-radius);
+      padding: 48px 40px;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--pink), var(--violet), var(--blue));
+    }
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .price-row:last-child { border-bottom: none; }
+    .price-row .label { font-size: 16px; }
+    .price-row .label small { display: block; font-size: 14px; color: rgba(179, 189, 204, 0.6); margin-top: 4px; }
+    .price-row .amount {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-bright);
+    }
+    .price-row .amount small {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .price-row .original {
+      text-decoration: line-through;
+      color: rgba(179, 189, 204, 0.4);
+      font-size: 16px;
+      margin-right: 8px;
+    }
+    .price-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0 0;
+      margin-top: 8px;
+      border-top: 2px solid var(--border-strong);
+    }
+    .price-total .label { font-size: 18px; font-weight: 600; color: var(--text-bright); }
+    .price-total .amount { font-size: 32px; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: rgba(247, 37, 133, 0.05);
+      border-left: 3px solid var(--pink);
+      border-radius: 0 16px 16px 0;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+    .callout p { font-size: 16px; margin: 0; }
+    .callout strong { color: var(--text-bright); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonial {
+      padding: 28px;
+      position: relative;
+    }
+    .testimonial .stars {
+      color: #fbbf24;
+      font-size: 16px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    .testimonial blockquote {
+      font-size: 15px;
+      font-style: italic;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .testimonial .author {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-bright);
+    }
+    .testimonial .author span {
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    /* ── FAQ ── */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item h3 {
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-item h3::after {
+      content: '+';
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--pink);
+      transition: transform 0.2s;
+    }
+    .faq-item.open h3::after { transform: rotate(45deg); }
+    .faq-item .answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      font-size: 16px;
+    }
+    .faq-item.open .answer {
+      max-height: 400px;
+      padding-top: 12px;
+    }
+
+    /* ── TERMS ── */
+    .terms {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .terms h3 {
+      font-size: 18px;
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
+    .terms h3:first-child { margin-top: 0; }
+    .terms p { margin-bottom: 12px; }
+
+    /* ── INSURANCE DOWNLOAD ── */
+    .insurance-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 32px;
+      backdrop-filter: blur(24px);
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .insurance-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(247, 37, 133, 0.15), rgba(115, 9, 185, 0.15));
+      border: 1px solid rgba(247, 37, 133, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    .insurance-info { flex: 1; min-width: 220px; }
+    .insurance-info h3 { margin-bottom: 4px; }
+    .insurance-info p { font-size: 15px; }
+
+    /* ── SIGNATURE SECTION ── */
+    .signature-section {
+      padding: 80px 0 120px;
+    }
+    .signature-card {
+      background: var(--surface);
+      border: 2px solid rgba(247, 37, 133, 0.3);
+      border-radius: var(--card-radius);
+      padding: 48px 40px;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .signature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--pink), var(--violet), var(--blue));
+    }
+    .signature-card h2 { margin-bottom: 8px; }
+    .signature-card .subtitle {
+      color: var(--text);
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text-bright);
+      font-family: inherit;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 3px rgba(247, 37, 133, 0.1);
+    }
+    .form-group input::placeholder { color: rgba(179, 189, 204, 0.3); }
+
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 24px 0 32px;
+      text-align: left;
+    }
+    .checkbox-group input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      accent-color: var(--pink);
+      flex-shrink: 0;
+    }
+    .checkbox-group label {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 40px;
+      background: var(--pink);
+      color: white;
+      border: none;
+      border-radius: 9999px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0 30px var(--pink-glow);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 40px rgba(247, 37, 133, 0.6);
+      transform: translateY(-1px);
+    }
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: rgba(255,255,255,0.05);
+      color: var(--text-bright);
+      border: 1px solid var(--border-strong);
+      border-radius: 9999px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(247, 37, 133, 0.5);
+    }
+
+    /* ── SUCCESS STATE ── */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 40px;
+    }
+    .success-message .checkmark {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, 0.1);
+      border: 2px solid rgba(34, 197, 94, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 28px;
+    }
+    .success-message h3 {
+      font-size: 24px;
+      color: var(--text-bright);
+      margin-bottom: 8px;
+    }
+    .success-message p {
+      color: var(--text);
+      font-size: 16px;
+    }
+    .success-message .sig-details {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      text-align: left;
+    }
+    .success-message .sig-details p {
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    /* ── PRINT SIGNATURE BLOCKS (hidden on screen, shown when printing) ── */
+    .print-signature-blocks {
+      display: none;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: rgba(179, 189, 204, 0.4);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .pricing-card { padding: 32px 24px; }
+      .signature-card { padding: 32px 24px; }
+      .price-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .price-total { flex-direction: column; align-items: flex-start; gap: 4px; }
+    }
+
+    /* ── PRINT / PDF EXPORT ── */
+    @media print {
+      @page { size: letter; margin: 0.6in; }
+      body { background: white; color: #222; font-size: 11pt; line-height: 1.5; }
+      .hero { padding: 0 0 24pt; }
+      .hero::before { display: none; }
+      .hero-logo { display: none; }
+      .hero h1 { color: #111 !important; font-size: 22pt; }
+      .hero .subtitle, .hero .meta { color: #555; }
+      .hero-badge { color: #F72585; border-color: #F72585; }
+      .hero .download-row { display: none; }
+      section { padding: 24pt 0; page-break-inside: avoid; break-inside: avoid; }
+      .container { max-width: 100%; padding: 0; }
+      h2, h3 { color: #111 !important; -webkit-text-fill-color: #111 !important; }
+      .gradient { color: #F72585 !important; -webkit-text-fill-color: #F72585 !important; background: none !important; }
+      .card, .pricing-card, .signature-card, .insurance-card {
+        border: 1px solid #ddd !important;
+        background: #fafafa !important;
+        backdrop-filter: none !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      .callout { background: #fdf2f8 !important; border-left: 3px solid #F72585 !important; }
+      .btn-primary, .btn-secondary { display: none !important; }
+      #signatureForm { display: none !important; }
+      .signature-card { border: 2px solid #F72585 !important; }
+      .faq-item .answer { max-height: none !important; padding-top: 12px !important; }
+      .faq-item h3::after { display: none; }
+      .faq-item h3 { cursor: default; }
+      footer { border-top: 1px solid #ddd; color: #888; }
+
+      /* Show print-only signature blocks */
+      .print-signature-blocks {
+        display: block !important;
+        margin-top: 40pt;
+        page-break-inside: avoid;
+      }
+      .print-sig-block {
+        margin-bottom: 32pt;
+      }
+      .print-sig-row {
+        display: flex;
+        gap: 24pt;
+        margin-bottom: 16pt;
+      }
+      .print-sig-field {
+        flex: 1;
+      }
+      .print-sig-line {
+        border-bottom: 1px solid #333;
+        height: 24pt;
+        margin-bottom: 4pt;
+      }
+      .print-sig-label {
+        font-size: 9pt;
+        color: #555;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .print-sig-block h3 {
+        font-size: 13pt;
+        margin-bottom: 12pt;
+        color: #111 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ HERO ════════ -->
+  <header class="hero">
+    <div class="container">
+      <img src="https://nanopulse.digital/logo.svg" alt="Nano Pulse Digital" class="hero-logo" onerror="this.style.display='none'">
+      <div class="hero-badge">Consulting Retainer Proposal</div>
+      <h1>Consulting Retainer for the <br><span class="gradient">Town of Castle Rock</span></h1>
+      <p class="subtitle">Prepared by Sean Pooley at Nano Pulse Digital</p>
+      <p class="meta">May 14, 2026 &middot; Proposal #NPD-2026-CRTA</p>
+      <div class="download-row">
+        <button class="btn-primary" onclick="window.print()">&#x2B07; Download as PDF</button>
+        <a class="btn-secondary" href="insurance-policy.pdf" target="_blank" rel="noopener">&#x1F4C4; View Insurance Policy</a>
+      </div>
+    </div>
+  </header>
+
+  <hr class="section-divider">
+
+  <!-- ════════ INTRODUCTION ════════ -->
+  <section>
+    <div class="container">
+      <h2>A Flexible <span class="gradient">Monthly Retainer</span></h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;" class="intro-grid">
+        <div>
+          <p><strong style="color: var(--text-bright);">Dear Castle Rock Team,</strong></p>
+          <p style="margin-top: 12px;">Thank you for considering Nano Pulse Digital as a consulting partner for the Town of Castle Rock.</p>
+          <p style="margin-top: 12px;">This proposal outlines a <strong style="color: var(--text-bright);">5-hour monthly consulting retainer</strong> at a discounted rate of $100/hour (reduced from our standard $150/hour rate), covering strategic, content, and technical guidance for your Civic Plus website and broader digital marketing efforts.</p>
+          <p style="margin-top: 12px;"><strong style="color: var(--text-bright);">The structure:</strong> 12-month term, fixed monthly hours, with insurance coverage included. Simple, predictable, and tailored to municipal needs.</p>
+        </div>
+        <div class="callout" style="margin: 0;">
+          <p><strong>What's included:</strong></p>
+          <p style="margin-top: 8px;">5 dedicated consulting hours each month, applied flexibly across strategy, content, and technical recommendations.</p>
+          <p style="margin-top: 8px;">A $1,000/year insurance policy (the same policy referenced in this proposal &mdash; available for download) covering the engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ════════ WHAT THESE HOURS COVER ════════ -->
+  <section>
+    <div class="container">
+      <h2>What These <span class="gradient">Hours Cover</span></h2>
+      <p class="section-intro">Your 5 monthly hours can be applied flexibly across any of the following areas. Use them however best serves the Town that month.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="icon-box" style="color: var(--pink);">01</div>
+          <h3>Marketing Strategy</h3>
+          <p style="font-size: 16px;">General marketing strategy consulting &mdash; campaign planning, audience targeting, channel recommendations, and digital marketing direction for Town initiatives.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-box" style="color: var(--violet);">02</div>
+          <h3>On-Page Content Recommendations</h3>
+          <p style="font-size: 16px;">Specific page-by-page content suggestions for the Town's Civic Plus website &mdash; what to add, refine, or restructure for clarity, accessibility, and search visibility.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-box" style="color: var(--blue);">03</div>
+          <h3>Content Writing</h3>
+          <p style="font-size: 16px;">Drafting and editing copy for pages, announcements, newsletters, or other Town-facing communications when needed.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-box" style="color: var(--pink);">04</div>
+          <h3>Technical Recommendations</h3>
+          <p style="font-size: 16px;">Suggestions and small HTML asset work for the Civic Plus site &mdash; buttons, embeds, callouts, layout tweaks, and other lightweight code-level recommendations.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-box" style="color: var(--violet);">05</div>
+          <h3>Schema & SEO Updates</h3>
+          <p style="font-size: 16px;">Structured data (schema markup), metadata optimization, and on-page SEO improvements to help residents and visitors find what they need on search engines.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-box" style="color: var(--blue);">06</div>
+          <h3>Travel Time</h3>
+          <p style="font-size: 16px;">Travel to and from the Town offices for in-person meetings, working sessions, or training counts toward the monthly hour allotment.</p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 40px;">
+        <p><strong>What this retainer does NOT include:</strong> This retainer is strictly hourly consulting and lightweight recommendations. It does <strong>not</strong> include website builds, large-scale development projects, custom application work, or major redesigns. Work outside the scope of these hours will be quoted separately and is not part of this agreement.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ════════ INSURANCE POLICY ════════ -->
+  <section>
+    <div class="container">
+      <h2>Insurance <span class="gradient">Coverage</span></h2>
+      <p class="section-intro">As required by the Town, Nano Pulse Digital carries an active insurance policy covering this consulting engagement. The full policy document is available below for review by the Town's legal and risk management teams.</p>
+
+      <div class="insurance-card">
+        <div class="insurance-icon">&#x1F6E1;</div>
+        <div class="insurance-info">
+          <h3>Active Insurance Policy</h3>
+          <p>Policy maintained for the duration of this engagement. Annual policy cost is $1,000/year, amortized into the monthly retainer fee.</p>
+        </div>
+        <a class="btn-primary" href="insurance-policy.pdf" target="_blank" rel="noopener" style="white-space: nowrap;">&#x2B07; Download Policy (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ════════ TESTIMONIALS ════════ -->
+  <section>
+    <div class="container">
+      <h2>What Our <span class="gradient">Clients Say</span></h2>
+      <p class="section-intro">We treat every client with respect and hard work. Our client list is intentionally small &mdash; we only take on engagements where we know we can do exceptional work.</p>
+
+      <div class="card-grid">
+        <div class="card testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Nano Pulse Digital was great to work with! Sean really took our concerns and requests seriously. He designed us an amazing website and gave amazing marketing advice. Professional and honest."</blockquote>
+          <div class="author">Cannon Vickery <span>&mdash; Vickery Internet</span></div>
+        </div>
+
+        <div class="card testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Sean is an excellent marketing consultant with a wide range of specialties. He is unmatched when it comes to SEO strategies and implementations. He is my go-to guy for any marketing needs."</blockquote>
+          <div class="author">Landon Bellum <span>&mdash; Bellum Realty</span></div>
+        </div>
+
+        <div class="card testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Had a great experience with Sean! He is so easy to work with and has shown me really great ways to improve my social media and YouTube presence. His advice on SEO has been invaluable."</blockquote>
+          <div class="author">Emily Ross <span>&mdash; Rosemary PG Studios</span></div>
+        </div>
+
+        <div class="card testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Sean helped me with getting my business up and running. He was great help with branding, marketing and content creation. Highly recommend!"</blockquote>
+          <div class="author">Brenton Trebilcock <span>&mdash; Dueling Blades Studios</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ════════ PRICING ════════ -->
+  <section>
+    <div class="container">
+      <h2>Your <span class="gradient">Investment</span></h2>
+      <p class="section-intro">Transparent monthly pricing with insurance included. No surprise fees, no hidden line items.</p>
+
+      <div class="pricing-card">
+        <div class="price-row">
+          <div class="label">
+            <strong style="color: var(--text-bright);">Monthly Consulting Hours</strong>
+            <small>5 hours per month at the discounted rate of $100/hr (reduced from the standard $150/hr rate &mdash; a $250/month savings)</small>
+          </div>
+          <div class="amount">
+            <span class="original">$750</span>
+            $500 <small>/month</small>
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="label">
+            <strong style="color: var(--text-bright);">Insurance Coverage</strong>
+            <small>Active insurance policy covering this engagement. $1,000/year amortized across 12 months.</small>
+          </div>
+          <div class="amount">$83.33 <small>/month</small></div>
+        </div>
+
+        <div class="price-total">
+          <div class="label">Monthly Total</div>
+          <div class="amount" style="color: var(--pink);">$583.33<small>/mo</small></div>
+        </div>
+        <div class="price-total" style="border-top: none; padding-top: 8px;">
+          <div class="label">Annual Contract Value</div>
+          <div class="amount" style="color: var(--pink);">$7,000</div>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 32px;">
+        <p><strong>Unused hours expire monthly.</strong> Each month begins with a fresh 5-hour allotment. Any hours not used by the end of a calendar month do not roll over into the following month and are forfeited. This keeps scheduling and billing simple and predictable on both sides.</p>
+      </div>
+
+      <div class="callout">
+        <p><strong>12-month term.</strong> This agreement runs for a fixed 12-month period beginning on the start date agreed upon at signing. After the initial term, the engagement can be renewed, modified, or concluded by either party with appropriate notice.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ════════ TERMS ════════ -->
+  <section>
+    <div class="container">
+      <h2>Terms & <span class="gradient">Conditions</span></h2>
+      <p class="section-intro">A plain-language summary of the agreement. The Town's legal team is expected to review and revise these terms; final language will be negotiated in good faith.</p>
+
+      <div class="card terms" style="margin-top: 32px;">
+        <h3>Summary</h3>
+        <p>The Town of Castle Rock ("the Town") is engaging Nano Pulse Digital ("the Consultant") to provide consulting services on a monthly retainer basis. The Consultant will provide 5 hours of consulting work per month at the rates and on the terms outlined in this proposal.</p>
+        <p>Both parties agree to communicate professionally, provide necessary materials and access in a timely manner, and uphold the obligations described herein. The Consultant will maintain confidentiality regarding any non-public Town information shared during the course of the engagement.</p>
+
+        <h3>Term</h3>
+        <p>This agreement is for a fixed term of <strong style="color: var(--text-bright);">12 months</strong> beginning on the effective date agreed upon at signing. Either party may terminate the agreement earlier with 30 days written notice, subject to payment of fees for services already rendered.</p>
+
+        <h3>Scope of Services</h3>
+        <p>The Consultant will provide up to 5 hours of consulting services per calendar month. These hours may be applied flexibly across: marketing strategy consulting, on-page content recommendations for the Town's Civic Plus website, content writing, technical recommendations for HTML assets and lightweight code-level work, schema and SEO improvements, and travel time to and from Town offices for in-person work.</p>
+        <p><strong style="color: var(--text-bright);">This agreement does not include:</strong> website builds, major redesigns, custom application development, or other large-scale project work. Such work, if requested, will be scoped and quoted under a separate agreement.</p>
+
+        <h3>Monthly Hour Allotment</h3>
+        <p>Each calendar month begins with a fresh allotment of 5 consulting hours. <strong style="color: var(--text-bright);">Any unused hours expire at the end of the calendar month in which they were allotted and do not roll over into subsequent months.</strong> Hours are billed at the discounted rate of $100/hour as part of the flat monthly retainer fee.</p>
+
+        <h3>Insurance</h3>
+        <p>The Consultant maintains an active insurance policy for the duration of this engagement, as required by the Town. The annual policy cost of $1,000 is amortized across the 12-month term and included in the monthly retainer fee. The full policy document is available for the Town's review at the link provided in this proposal.</p>
+
+        <h3>Payments</h3>
+        <p>The monthly retainer fee of $583.33 ($500 consulting + $83.33 insurance) is invoiced at the beginning of each month and due within 30 days of invoice date. Late balances may accrue interest at 1.5% per month or the maximum rate permitted by Colorado law, whichever is lower.</p>
+
+        <h3>Out-of-Scope Work</h3>
+        <p>If work requested by the Town exceeds the monthly 5-hour allotment, or falls outside the scope described above, the Consultant will provide a written estimate before proceeding. No out-of-scope work will be performed without prior written approval from the Town.</p>
+
+        <h3>Confidentiality</h3>
+        <p>The Consultant agrees to maintain the confidentiality of any non-public Town information, records, or communications received during the course of the engagement, both during and after the term of this agreement.</p>
+
+        <h3>Independent Contractor</h3>
+        <p>The Consultant operates as an independent contractor and is not an employee, agent, or representative of the Town. The Consultant is responsible for their own taxes, benefits, and business expenses.</p>
+
+        <h3>Ownership of Deliverables</h3>
+        <p>All written content, recommendations, code snippets, schema markup, and other deliverables created specifically for the Town during the engagement are the property of the Town upon payment. The Consultant retains the right to reference the engagement (in general terms) for portfolio and marketing purposes.</p>
+
+        <h3>Legal Review</h3>
+        <p>The Town's legal team will review and may revise these terms prior to execution. The Consultant agrees to negotiate final contract language in good faith. This document serves as the proposed framework for the engagement.</p>
+
+        <h3>Governing Law</h3>
+        <p>This agreement will be governed by the laws of the State of Colorado. Any disputes will be resolved in the courts of the appropriate jurisdiction in Colorado.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ════════ SIGNATURE ════════ -->
+  <section class="signature-section">
+    <div class="container">
+      <div class="signature-card" id="signatureCard">
+        <div id="signatureForm">
+          <h2>Approve <span class="gradient">Proposal</span></h2>
+          <p class="subtitle">An authorized representative of the Town of Castle Rock may sign digitally below, or download this proposal as a PDF for legal review and physical signature.</p>
+
+          <div style="text-align: left; max-width: 480px; margin: 0 auto;">
+            <div style="background: rgba(255,255,255,0.03); border-radius: 12px; padding: 20px; margin-bottom: 24px; border: 1px solid var(--border);">
+              <p style="font-size: 14px; margin-bottom: 12px;"><strong style="color: var(--text-bright);">Two ways to approve:</strong></p>
+              <p style="font-size: 14px; margin-bottom: 6px;">1. Sign digitally using the form below</p>
+              <p style="font-size: 14px; margin-bottom: 6px;">2. Or click "Download as PDF" at the top of this page for legal review and physical signature</p>
+            </div>
+
+            <div class="form-group">
+              <label for="sigName">Full Legal Name</label>
+              <input type="text" id="sigName" placeholder="Authorized Representative" required>
+            </div>
+
+            <div class="form-group">
+              <label for="sigTitle">Title / Role</label>
+              <input type="text" id="sigTitle" placeholder="Town Manager, Communications Director, etc." required>
+            </div>
+
+            <div class="form-group">
+              <label for="sigEmail">Email Address</label>
+              <input type="email" id="sigEmail" placeholder="name@crgov.com" required>
+            </div>
+
+            <div class="checkbox-group">
+              <input type="checkbox" id="sigAgree" required>
+              <label for="sigAgree">I am an authorized representative of the Town of Castle Rock and agree to the terms of this proposal. I acknowledge that my typed name serves as a legally binding digital signature, subject to final legal review.</label>
+            </div>
+
+            <div style="text-align: center;">
+              <button class="btn-primary" id="signBtn" onclick="signProposal()" disabled>
+                Sign Proposal
+              </button>
+              <p style="font-size: 12px; color: rgba(179,189,204,0.4); margin-top: 12px;">Secured by Nano Pulse Digital</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="success-message" id="successMessage">
+          <div class="checkmark">&#10003;</div>
+          <h3>Proposal Signed!</h3>
+          <p>Thank you. We'll be in touch shortly to schedule the kickoff and confirm the start date.</p>
+          <div class="sig-details">
+            <p><strong style="color: var(--text-bright);">Signed by:</strong> <span id="confirmedName"></span></p>
+            <p><strong style="color: var(--text-bright);">Title:</strong> <span id="confirmedTitle"></span></p>
+            <p><strong style="color: var(--text-bright);">Email:</strong> <span id="confirmedEmail"></span></p>
+            <p><strong style="color: var(--text-bright);">Date:</strong> <span id="confirmedDate"></span></p>
+            <p><strong style="color: var(--text-bright);">Proposal:</strong> #NPD-2026-CRTA</p>
+          </div>
+        </div>
+
+        <!-- ── PRINT-ONLY SIGNATURE BLOCKS ── -->
+        <div class="print-signature-blocks">
+          <div class="print-sig-block">
+            <h3>For the Town of Castle Rock</h3>
+            <div class="print-sig-row">
+              <div class="print-sig-field">
+                <div class="print-sig-line"></div>
+                <div class="print-sig-label">Signature</div>
+              </div>
+              <div class="print-sig-field">
+                <div class="print-sig-line"></div>
+                <div class="print-sig-label">Date</div>
+              </div>
+            </div>
+            <div class="print-sig-row">
+              <div class="print-sig-field">
+                <div class="print-sig-line"></div>
+                <div class="print-sig-label">Printed Name</div>
+              </div>
+              <div class="print-sig-field">
+                <div class="print-sig-line"></div>
+                <div class="print-sig-label">Title</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="print-sig-block">
+            <h3>For Nano Pulse Digital</h3>
+            <div class="print-sig-row">
+              <div class="print-sig-field">
+                <div class="print-sig-line"></div>
+                <div class="print-sig-label">Signature</div>
+              </div>
+              <div class="print-sig-field">
+                <div class="print-sig-line"></div>
+                <div class="print-sig-label">Date</div>
+              </div>
+            </div>
+            <div class="print-sig-row">
+              <div class="print-sig-field">
+                <div class="print-sig-line"></div>
+                <div class="print-sig-label">Printed Name</div>
+              </div>
+              <div class="print-sig-field">
+                <div class="print-sig-line"></div>
+                <div class="print-sig-label">Title</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ════════ FAQ ════════ -->
+  <section>
+    <div class="container">
+      <h2>Frequently Asked <span class="gradient">Questions</span></h2>
+
+      <div style="margin-top: 32px;">
+        <div class="faq-item open">
+          <h3 onclick="this.parentElement.classList.toggle('open')">What happens if we don't use all 5 hours in a given month?</h3>
+          <div class="answer">
+            <p>Unused hours expire at the end of each calendar month and do not roll over. This keeps billing predictable and ensures the retainer reflects current month-to-month value. If the Town consistently underutilizes the hours, we can revisit the structure at renewal.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 onclick="this.parentElement.classList.toggle('open')">What if we need more than 5 hours in a particular month?</h3>
+          <div class="answer">
+            <p>Additional hours beyond the 5-hour monthly allotment are available at the standard $150/hour rate, quoted and approved in writing before any work begins. We'll never exceed the monthly hours without prior written approval from the Town.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 onclick="this.parentElement.classList.toggle('open')">Does travel time count against the 5 hours?</h3>
+          <div class="answer">
+            <p>Yes. Travel to and from Town offices for in-person meetings or working sessions is counted toward the monthly hour allotment. We'll always confirm in advance whether a meeting will be in-person or remote so the Town can plan accordingly.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 onclick="this.parentElement.classList.toggle('open')">What does the insurance policy cover?</h3>
+          <div class="answer">
+            <p>The active policy covers the consulting engagement as required by the Town's contracting requirements. The full policy document is available for download on this page and is included so that the Town's legal and risk management teams can verify coverage details.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 onclick="this.parentElement.classList.toggle('open')">Can the Town request a larger project (like a website build) under this agreement?</h3>
+          <div class="answer">
+            <p>No. This retainer is specifically for hourly consulting and lightweight recommendations. Larger projects &mdash; full website builds, major redesigns, custom application development &mdash; would be scoped and quoted under a separate agreement, not drawn from these monthly hours.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 onclick="this.parentElement.classList.toggle('open')">Will Castle Rock's legal team be able to revise these terms?</h3>
+          <div class="answer">
+            <p>Yes. This proposal is intended as a starting framework. The Town's legal and procurement teams are welcome to review, mark up, and propose revisions. We'll negotiate final contract language in good faith before execution.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 onclick="this.parentElement.classList.toggle('open')">Who at Nano Pulse Digital will the Town work with?</h3>
+          <div class="answer">
+            <p>You'll work directly with Sean Pooley. Nano Pulse Digital is a one-person operation, which means consistent communication, no account-manager handoffs, and direct accountability for every hour billed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Nano Pulse Digital &middot; Proposal #NPD-2026-CRTA &middot; Prepared for the Town of Castle Rock</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Enable sign button when all fields are filled ──
+    const nameInput = document.getElementById('sigName');
+    const titleInput = document.getElementById('sigTitle');
+    const emailInput = document.getElementById('sigEmail');
+    const agreeCheck = document.getElementById('sigAgree');
+    const signBtn = document.getElementById('signBtn');
+
+    function validateForm() {
+      const nameValid = nameInput.value.trim().length > 0;
+      const titleValid = titleInput.value.trim().length > 0;
+      const emailValid = emailInput.value.trim().length > 0 && emailInput.value.includes('@');
+      const agreed = agreeCheck.checked;
+      signBtn.disabled = !(nameValid && titleValid && emailValid && agreed);
+    }
+
+    nameInput.addEventListener('input', validateForm);
+    titleInput.addEventListener('input', validateForm);
+    emailInput.addEventListener('input', validateForm);
+    agreeCheck.addEventListener('change', validateForm);
+
+    // ── Sign proposal ──
+    async function signProposal() {
+      const name = nameInput.value.trim();
+      const title = titleInput.value.trim();
+      const email = emailInput.value.trim();
+      const now = new Date();
+      const dateStr = now.toLocaleString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short'
+      });
+
+      signBtn.disabled = true;
+      signBtn.textContent = 'Signing...';
+
+      // Send to FormSubmit (sends email to sean.pooley@nanopulse.digital)
+      try {
+        const formData = new FormData();
+        formData.append('Signed By', name);
+        formData.append('Title', title);
+        formData.append('Signer Email', email);
+        formData.append('Date Signed', dateStr);
+        formData.append('Proposal', 'NPD-2026-CRTA');
+        formData.append('Client', 'Town of Castle Rock');
+        formData.append('_subject', 'Proposal Signed: Town of Castle Rock (NPD-2026-CRTA)');
+        formData.append('_template', 'table');
+        formData.append('_captcha', 'false');
+
+        await fetch('https://formsubmit.co/ajax/sean.pooley@nanopulse.digital', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        });
+      } catch (err) {
+        console.error('Notification failed:', err);
+      }
+
+      // Show success
+      document.getElementById('signatureForm').style.display = 'none';
+      document.getElementById('successMessage').style.display = 'block';
+      document.getElementById('confirmedName').textContent = name;
+      document.getElementById('confirmedTitle').textContent = title;
+      document.getElementById('confirmedEmail').textContent = email;
+      document.getElementById('confirmedDate').textContent = dateStr;
+    }
+  </script>
+
+  <!-- Responsive grid fix for intro -->
+  <style>
+    @media (max-width: 768px) {
+      .intro-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</body>
+</html>
